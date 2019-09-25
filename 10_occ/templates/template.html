@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>random occupations </title>
+  </head>
+   <body>
+     Today's luck job is: {{job}}
+     <br>
+     <table>
+       <tr>
+          <th>Occupation</th>
+          <th>Percentage</th>
+       </tr>
+       {% for item in coll %}
+           <tr>
+           <td>{{item}}</td>
+           <td>{{coll[item]}}</td>
+           </tr>
+       {% endfor %}
+
+     </table>
+   </body>
+</html>
