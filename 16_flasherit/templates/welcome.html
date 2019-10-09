@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}
+  Welcome
+{% endblock %}
+  {% block content %}
+    Welcome!<br>
+    {%for messages in get_flashed_messages()%}
+        {{messages}}
+    {% endfor %}
+    <form action="\logout" method="GET">
+      <input type="submit" value="logout">
+    </form>
+ {% endblock %}
