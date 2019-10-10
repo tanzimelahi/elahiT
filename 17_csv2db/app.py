@@ -28,7 +28,7 @@ c.execute(command);
 with open('students.csv', newline='') as csvfile:
       reader = csv.DictReader(csvfile)
       for row in reader:
-          rcommand="INSERT INTO courses VALUES(\"{}\",\"{}\",\"{}\");".format(row["name"],row["age"],row["id"])
+          rcommand="INSERT INTO students VALUES(\"{}\",\"{}\",\"{}\");".format(row["name"],row["age"],row["id"])
           c.execute(rcommand);
 #==========================================================
 
