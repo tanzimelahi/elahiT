@@ -1,3 +1,6 @@
+#Tanzim Elahi and Jessi
+#Softdev pd1
+#Average
 import csv
 import sqlite3
 DB_FILE="discobandit.db"
