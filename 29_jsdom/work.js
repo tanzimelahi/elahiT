@@ -1,22 +1,38 @@
-document.getElementById("b").addEventListener("click",function(){
+ document.getElementById("b").addEventListener("click",function(){
   var node = document.createElement("LI");
   var textnode = document.createTextNode("pika");
   node.appendChild(textnode);
+  addEvent(node,"mouseover");
+  addEvent2(node,"mouseout");
+  disappear(node);
   document.getElementById("thelist").appendChild(node);
 });
-var list=document.getElementsByTagName("LI");
-  console.log(list.length);
-  for(var i=0; i<list.length;i++){
-    list[i].addEventListener("mouseover",function(){
-     document.getElementById("h").innerHTML=list[i].innerHTML;
-     });
-     list[i].addEventListener("mouseout",function(){
-       document.getElementById("h").innerHTML="Hello World!" ;
-     });
-     list[i].addEventListener("click",function(){
-       document.getElementById("thelist").removeChild(list[i]);
-     });
-  }
+var list=document.getElementsByTagName("li");
+var changeHeading=function(x){
+  var heading=document.getElementById("h");
+  heading.innerHTML=x;
+}
+var addEvent=function(obj,eventName){
+  obj.addEventListener(eventName,function(x){
+    changeHeading(obj.innerHTML);
+  });
+};
+var addEvent2=function(obj,eventName){
+  obj.addEventListener(eventName,function(x){
+    changeHeading("helloWorld");
+  });
+};
+var disappear=function(node){
+  var obj=document.getElementById("thelist");
+  node.addEventListener("click",function(){
+    obj.removeChild(node);
+  });
+};
+for (var i=0;i<list.length;i++){
+  addEvent(list[i],"mouseover");
+  addEvent2(list[i],"mouseout");
+  disappear(list[i]);
+};
 var fibonacchi=function(x){
   if(x==0){
     return 0;
@@ -35,5 +51,5 @@ document.getElementById("fb").addEventListener("click",function(){
   tracker++;
   node.appendChild(text);
   document.getElementById("fiblist").append(node);
-  docu
-})
+
+});
